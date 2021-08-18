@@ -1,0 +1,20 @@
+#include <stdio.h>
+ 
+int sum(int n);
+int sum(int n)
+{
+    if (n == 0)
+       return 0;
+    else         //n=12345
+    return (n % 10 + sum(n / 10));    //n%10=5;5+sum(1234)
+    //5+4+sum(123)//at last 5+4+3+2+1=15
+}
+ 
+
+int main()
+{
+    int num = 12345;
+    int result = sum(num);
+    printf("Sum of digits in %d is %d\n", num, result);//Sum of digits in 12345 is 15
+    return 0;
+}
