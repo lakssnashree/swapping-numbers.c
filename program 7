@@ -1,0 +1,23 @@
+ #include <stdio.h>
+ 
+// gcd of a and b
+int gcd(int a, int b)
+{
+    if (a == 0) 
+        return b; 
+    return gcd(b % a, a); // gcd(5,15) //gcd(0,15)
+}
+ 
+// LCM of two numbers
+int lcm(int a, int b)
+{
+    return (a / gcd(a, b)) * b;  // 15/gcd(15,20)*20  //(15/5)*20    
+}
+ 
+
+int main()
+{
+    int a = 15, b = 20;
+    printf("LCM of %d and %d is %d ", a, b, lcm(a, b)); //LCM of 15 and 20 is 60 
+    return 0;
+}
